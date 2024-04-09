@@ -783,69 +783,57 @@ html{
   font-size: 48px;
   line-height: 59px;
   font-weight: 400;
-
-  color: #000;
+  color: black;
 }
 
-.section-faq__list{
-  display: flex;
-  flex-direction: column;
-}
-
-.section-faq__link{
-  position: relative;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 31px 0;
-
-  /* border-top: 1px solid #CACACA; */
-}
-
-.section-faq__item:not(:first-child) .section-faq__link{
-  padding-top: 30px;
-}
-
-.section-faq__link::before,
-.section-faq__link::after{
-  content: '';
-
-  position: absolute;
-
-  width: 100%;
-  height: 1px;
-  background-color: #CACACA;
-  /* transition: background-color .2s linear; */
-}
-
-.section-faq__link::before{
-  top: 0;
-  left: 0;
-}
-
-.section-faq__link::after{
-  bottom: 0;
-  left: 0;
-}
-
-.section-faq__item:not(:first-child) .section-faq__link::before{
-  top: -1px;
-}
-
-/* .section-faq__item:last-child{
+/* .ui-accordion{
   border-bottom: 1px solid #CACACA;
 } */
 
-.section-faq__item__title{
+.ui-accordion .ui-accordion-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
   margin: 0;
+  align-items: center;
 
   font-size: 24px;
   line-height: 32px;
-  font-weight: 700;
+  font-weight: bold;
+  color: black;
 
+  font-family: 'Montserrat', 'Arial', sans-serif;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-top: 1px solid #CACACA;
+  /* border-bottom: 1px solid #CACACA; */
+
+  transition: color .2s linear, border-color .2s linear;
+}
+
+/* .ui-accordion .ui-accordion-header:not(:first-child){
+  margin-top: -1px;
+} */
+
+.ui-accordion .ui-accordion-content{
+  padding: 0;
+  padding-bottom: 40px;
+
+  font-family: 'Montserrat', 'Arial', sans-serif;
+
+  border: none;
+}
+
+.section-faq__description{
+  max-width: 1003px;
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 2;
+  font-weight: 400;
   color: #000;
-  transition: color .2s linear;
 }
 
 .section-faq__btn{
@@ -883,73 +871,50 @@ html{
   transform: rotate(90deg);
 }
 
-.section-faq__link:hover::after,
-.section-faq__link:hover::before{
-  background-color: #FF9900;
-  z-index: 2;
-}
-
-.section-faq__link:hover .section-faq__item__title{
-  color: #FF9900;
-}
-
-.section-faq__link:hover .section-faq__btn{
-  background-color: #FF9900;
-}
-
-.section-faq__link:hover .section-faq__btn::after,
-.section-faq__link:hover .section-faq__btn::before{
-  background-color: #FFF;
-}
-
-.section-faq__link:focus{
-  outline: none;
-}
-
-.section-faq__link:focus::after,
-.section-faq__link:focus::before{
-  background-color: #FF9900;
-  z-index: 2;
-}
-
-.section-faq__link:focus .section-faq__item__title{
-  color: #FF9900;
-}
-
-.section-faq__link:focus .section-faq__btn{
-  background-color: #FF9900;
-}
-
-.section-faq__link:focus .section-faq__btn::after,
-.section-faq__link:focus .section-faq__btn::before{
-  background-color: #FFF;
-}
-
-.section-faq__link:active{
-  outline: none;
-}
-
-.section-faq__link:active::after,
-.section-faq__link:active::before{
-  background-color: #CACACA;
-  z-index: 1;
-}
-
-.section-faq__link:active .section-faq__item__title{
-  color: #000;
-}
-
-.section-faq__link:active .section-faq__btn{
-  background-color: #CACACA;
-}
-
-.section-faq__link:active .section-faq__btn::after,
-.section-faq__link:active .section-faq__btn::before{
-  background-color: #000;
-}
-
-.section-faq__link:active .section-faq__btn{
+.ui-accordion-header-active .section-faq__btn{
   transform: rotate(45deg);
+}
+
+.ui-accordion-header:hover .section-faq__btn,
+.ui-accordion-header:focus .section-faq__btn{
+  background-color: #FF9900;
+
+  outline: none;
+}
+
+.ui-accordion-header:hover .section-faq__btn::after,
+.ui-accordion-header:hover .section-faq__btn::before,
+.ui-accordion-header:focus .section-faq__btn::after,
+.ui-accordion-header:focus .section-faq__btn::before{
+  background-color: #FFF;
+
+  outline: none;
+}
+
+.ui-accordion .ui-accordion-header:hover,
+.ui-accordion .ui-accordion-header:focus{
+  color: #FF9900;
+
+  border-color: #FF9900;
+  outline: none;
+}
+
+.ui-accordion-header:hover + .ui-accordion-content + .ui-accordion-header,
+.ui-accordion-header:focus + .ui-accordion-content + .ui-accordion-header{
+  border-color: #FF9900;
+}
+
+.ui-accordion .ui-accordion-header:last-child{
+  padding: 0;
+
+  cursor: pointer;
+}
+
+.ui-accordion .ui-accordion-header:last-child:hover,
+.ui-accordion .ui-accordion-header:last-child:focus{
+  border-color: #CACACA;
+
+  outline: none;
 }
 
 /* Footer */
