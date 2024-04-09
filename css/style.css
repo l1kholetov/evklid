@@ -1877,6 +1877,10 @@ html{
     height: 0.6px;
   }
 
+  .section-faq__description{
+    font-size: 12px;
+  }
+
   .section-faq__space{
     min-width: 15px;
   }
